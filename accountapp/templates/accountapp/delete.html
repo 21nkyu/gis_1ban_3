@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{#{% load bootstrap4 %} form 페이지를 사용안한다#}
+
+{% block content %}
+    <div class="text-center mw-500 m-auto">
+        <div class="m-5">
+            <h4>Quit</h4>
+
+        </div>
+        <div>
+            <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
+                {% csrf_token %}
+{#                {% bootstrap_form form %}#}
+                <div class="m-5">
+                    <input type="submit" class="btn btn-danger rounded-pill px-5">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
