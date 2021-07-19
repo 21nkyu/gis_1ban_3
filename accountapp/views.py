@@ -29,7 +29,7 @@ def hello_world(request):
             return render(request, 'accountapp/hello_world.html',
                           context={'hello_world_list': hello_world_list})
     else:
-        return HttpResponseRedirect(reverse('accountapp/login'))
+        return HttpResponseRedirect(reverse('accountapp:login'))
 
 
 
@@ -55,13 +55,13 @@ class AccountUpdateView(UpdateView):
         if request.user.is_authenticated:
             return super().get(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse('accountapp/login'))
+            return HttpResponseRedirect(reverse('accountapp:login'))
 
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return super().post(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse('accountapp/login'))
+            return HttpResponseRedirect(reverse('accountapp:login'))
 
 class AccountDeleteView(DeleteView):
     model = User
@@ -74,10 +74,10 @@ class AccountDeleteView(DeleteView):
         if request.user.is_authenticated:
             return super().get(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse('accountapp/login'))
+            return HttpResponseRedirect(reverse('accountapp:login'))
 
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return super().post(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse('accountapp/login'))
+            return HttpResponseRedirect(reverse('accountapp:login'))

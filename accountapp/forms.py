@@ -5,4 +5,4 @@ class AccountCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        sefl.feilds['username'].disabled = True
+        self.feilds['username'].disabled = True
