@@ -30,13 +30,15 @@
             {{ target_user.date_joined }}
         </div>
         <div>
-            <a href="{% url 'accountapp:update' pk=user.pk %}">   {# updateinfo는 로그인된 상태에서 정보를 수정하는 것이기 때문에 detail에 만들어준다. #}
-                    Update_Info
+            <a href="{% url 'accountapp:update' pk=user.pk %}"
+            class="material-icons round_button mx-1">   {# updateinfo는 로그인된 상태에서 정보를 수정하는 것이기 때문에 detail에 만들어준다. #}
+                    setting {# meterial-icons에서 아이콘 이름이 setting #}
             </a>
         </div>
         <div>
-            <a href="{% url 'accountapp:delete' pk=user.pk %}">   {# updateinfo는 로그인된 상태에서 정보를 수정하는 것이기 때문에 detail에 만들어준다. #}
-                    Quit
+            <a href="{% url 'accountapp:delete' pk=user.pk %}"
+            class="material-icons round_button" mx-1>   {# updateinfo는 로그인된 상태에서 정보를 수정하는 것이기 때문에 detail에 만들어준다. #}
+                    close
             </a>
         </div>
     </div>
