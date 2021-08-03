@@ -20,13 +20,12 @@ class ProfileCreateView(CreateView):
     def get_success_url(self):
         return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
 
-
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
 
-@method_decorator(login_required, 'get')  #@method_decorator(login_required(login_url=), 'get')
+@method_decorator(login_required, 'get')  # @method_decorator(login_required(login_url=), 'get')
 @method_decorator(login_required, 'post')
 class ProfileUpdateView(UpdateView):
     model = Profile
@@ -38,12 +37,13 @@ class ProfileUpdateView(UpdateView):
     def get_success_url(self):
         return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
 
+
 @method_decorator(profile_ownership_required, 'get')
 @method_decorator(profile_ownership_required, 'post')
 class ProfileUpdateView(UpdateView):
     model = Profile
     form_class = ProfileCreationForm
-    context_object_name = 'target_profile'  #프로필이기때문에 이름을 이렇게 // 접근 할때 이 이름으로 접근한다
+    context_object_name = 'target_profile'  # 프로필이기때문에 이름을 이렇게 // 접근 할때 이 이름으로 접근한다
     # success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'profileapp/update.html'
 
