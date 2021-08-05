@@ -6,7 +6,11 @@
 
     <div class="pragmatic_header_button">
         <span>nav1</span>
-        <span>nav2</span>
+        <span>
+            <a href="{% url 'articleapp:list' %}">
+                Articles
+            </a>
+        </span>
         {% if not user.is_autenticated %}
         <span>
             <a href="{% url 'accountapp:login' %}">
