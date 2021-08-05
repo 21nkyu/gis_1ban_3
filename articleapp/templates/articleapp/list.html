@@ -6,11 +6,12 @@
     <style>
         .container div {
           width: 280px;
-          background-color: antiquewhite;
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 1px;
+            flex-direction: column;
+            box-shadow: 0 0 1rem green;
         }
 
         div img{
@@ -41,12 +42,12 @@
 
     {% include 'snippets/pagination.html' %}
 
-    <div class="text-center my-5">
-        <a href="{% url articleapp:create %}"
+    <div class="text-center">
+        <a href="{% url 'articleapp:create' %}"
             class="btn btn-dark rounded-pill material-icons">
             brush
         </a>
-        <a href="{% url articleapp:create %}"
+        <a href="{% url 'articleapp:create' %}"
             class="btn btn-outline-dark rounded-pill px=5">
             Create Article
         </a>

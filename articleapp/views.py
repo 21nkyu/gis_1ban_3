@@ -23,7 +23,7 @@ class ArticleCreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('article:detial', kwargs={'pk': self.object.pk})
+        return reverse('articleapp:detail', kwargs={'pk': self.object.pk})
 
 class ArticleDetailView(DetailView):
     model = Article
@@ -51,6 +51,6 @@ class ArticleDeleteView(DeleteView):
 
 class ArticleListView(ListView):
     model = Article
-    context_object_name = 'target_article'
-    template_name = 'articleapp:list.html'
-    paginate_by = 20
+    context_object_name = 'article_list'
+    template_name = 'articleapp/list.html'
+    paginate_by = 2

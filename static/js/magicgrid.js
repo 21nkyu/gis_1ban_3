@@ -281,8 +281,9 @@ let magicGrid = new MagicGrid({
   gutter: 30,
   static: true,
   useMin: true
+});
 
-})
+
 var masonrys = document.getElementsByTagName("img")
 
 for (let i =0; i < masonrys.length; i++) {

@@ -8,7 +8,7 @@
             <h4>Delete Article.{[ target_article.title }}</h4>
         </div>
         <div>
-            <form action="{% url 'articleapp:delete' %}"
+            <form action="{% url 'articleapp:delete' pk=target_article.pk %}"
 {#                  enctype="multipart/form-data"#}
                   method="post"> {# url acc~app 의 create로 요청을 보내라 #}
                 {% csrf_token %}   {# ??보안#}
@@ -19,7 +19,6 @@
                 </div>
             </form>
         </div>
-
     </div>
 {% endblock %}
 
