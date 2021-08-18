@@ -5,10 +5,14 @@
     </div>
 
     <div class="pragmatic_header_button">
-        <span>nav1</span>
         <span>
             <a href="{% url 'articleapp:list' %}">
                 Articles
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'projectapp:list' %}">
+                Project
             </a>
         </span>
         {% if not user.is_autenticated %}
